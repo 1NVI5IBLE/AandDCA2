@@ -1,7 +1,10 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <cctype>
 #include "BSTNode.h"
 #include "BinaryTree.h"
+#include "Treemap.h"
 #include "string"
 
 using namespace std;
@@ -17,15 +20,11 @@ int main(void) {
         cout << "Error opening file: " << filename << endl;
         return 1;
     }
+    
+    Treemap<char, BinaryTree<string>> wordMap;
 
-
-    char c;
-    while (inFile.get(c)) {
-        cout << c;
-    }
-
-
-    inFile.close();
-
-    return 0;
+    string line;
+    while (getline(inFile, line)) {
+        stringstream ss(line);
+        string word;
 }
