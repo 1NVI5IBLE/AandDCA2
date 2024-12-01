@@ -54,4 +54,13 @@ int main(void) {
 
     if (wordMap.containsKey(selectedletter)) {
         cout << "Words that start with " << selectedletter << " : " << endl;
+        BinaryTree<string>& wordsTree = wordMap[selectedletter];
+        wordsTree.printInOrder();
+    }
+    else
+    {
+        cout << "No words have been found with the letter you selected " << selectedletter << endl;
+    }
+
+    return 0;
 }
