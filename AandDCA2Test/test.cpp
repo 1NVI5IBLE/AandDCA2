@@ -1,5 +1,7 @@
-#include "C:/Users/liamt/source/repos/AandDCA2/AandDCA2/Treemap.h"
+#include "pch.h"
 #include "CppUnitTest.h"
+#include <set>
+#include "../AandDCA2/Treemap.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -23,7 +25,7 @@ namespace TestTreeMap
 			Assert::AreEqual(3, map.size());
 		}
 
-		
+
 		TEST_METHOD(TestGet)
 		{
 			Treemap<int, std::string> map;
@@ -78,7 +80,24 @@ namespace TestTreeMap
 			Assert::AreEqual(std::string("Two"), map[2]);
 		}
 
-		
-		
+		TEST_METHOD(TestKeySet)
+		{
+			Treemap<int, std::string> map;
+			map.put(1, "One");
+			map.put(2, "Two");
+			map.put(3, "Three");
+
+			BinaryTree<int> keys = map.keySet();
+			Assert::AreEqual(3, keys.count());
+			int* keyArray = keys.toArray();
+			std::set<int> expectedKeys = { 1, 2, 3 };
+			std::set<int> actualKeys(keyArray, keyArray + keys.count());
+			Assert::IsTrue(expectedKeys == actualKeys);
+			delete[] keyArray;
+
+		}
+
 	};
+
+
 }
