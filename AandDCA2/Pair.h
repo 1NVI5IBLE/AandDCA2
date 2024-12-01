@@ -6,6 +6,8 @@ struct Pair {
 	K key;
 	V value;
 
+	Pair() : key(K()), value(V()) {}
+
 	Pair(K k, V v) : key(k), value(v) {}
 
 	bool operator < (const Pair& other) const { return key < other.key; }
