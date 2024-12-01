@@ -51,4 +51,7 @@ int main(void) {
     cout << "\n Enter a letter and see what words start with the letter selected:  ";
     cin >> selectedletter;
     selectedletter = tolower(selectedletter);
+
+    if (wordMap.containsKey(selectedletter)) {
+        cout << "Words that start with " << selectedletter << " : " << endl;
 }
