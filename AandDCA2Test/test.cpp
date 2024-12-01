@@ -43,6 +43,18 @@ namespace TestTreeMap
 			Assert::IsTrue(map.containsKey(1));
 			Assert::IsFalse(map.containsKey(2));
 		}
+
+
+		TEST_METHOD(TestRemoveKey)
+		{
+			Treemap<int, std::string> map;
+			map.put(1, "One");
+			map.put(2, "Two");
+			Assert::IsTrue(map.removeKey(1));
+			Assert::IsFalse(map.containsKey(1));
+			Assert::AreEqual(1, map.size());
+			Assert::IsFalse(map.removeKey(3));
+		}
 		
 	};
 }
