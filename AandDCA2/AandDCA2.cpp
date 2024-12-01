@@ -27,4 +27,10 @@ int main(void) {
     while (getline(inFile, line)) {
         stringstream ss(line);
         string word;
+
+        while (ss >> word) {
+            if (!word.empty() && isalpha(word[0])) {
+                char thefirstletter = tolower(word[0]);
+        }
+    }
 }
