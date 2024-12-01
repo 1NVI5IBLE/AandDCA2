@@ -20,7 +20,7 @@ int main(void) {
         cout << "Error opening file: " << filename << endl;
         return 1;
     }
-    
+
     Treemap<char, BinaryTree<string>> wordMap;
 
     string line;
@@ -37,12 +37,18 @@ int main(void) {
                     wordMap.put(thefirstletter, tree);
                 }
                 wordMap[thefirstletter].add(word);
+            }
         }
     }
-}
 
     inFile.close();
 
     cout << "Letters that contain words: " << endl;
     BinaryTree<char> lettersTree = wordMap.keySet();
     lettersTree.printInOrder();
+
+    char selectedletter;
+    cout << "\n Enter a letter and see what words start with the letter selected:  ";
+    cin >> selectedletter;
+    selectedletter = tolower(selectedletter);
+}
