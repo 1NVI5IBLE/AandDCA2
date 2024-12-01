@@ -34,6 +34,15 @@ namespace TestTreeMap
 			Assert::AreEqual(std::string("Two"), map.get(2));
 			Assert::AreEqual(std::string("Three"), map.get(3));
 		}
+
+
+		TEST_METHOD(TestContainsKey)
+		{
+			Treemap<int, std::string> map;
+			map.put(1, "One");
+			Assert::IsTrue(map.containsKey(1));
+			Assert::IsFalse(map.containsKey(2));
+		}
 		
 	};
 }
