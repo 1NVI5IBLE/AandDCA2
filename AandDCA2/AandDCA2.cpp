@@ -31,6 +31,12 @@ int main(void) {
         while (ss >> word) {
             if (!word.empty() && isalpha(word[0])) {
                 char thefirstletter = tolower(word[0]);
+
+                if (!wordMap.containsKey(thefirstletter)) {
+                    BinaryTree<string> tree;
+                    wordMap.put(thefirstletter, tree);
+                }
+                wordMap[thefirstletter].add(word);
         }
     }
 }
