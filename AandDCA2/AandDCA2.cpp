@@ -40,3 +40,9 @@ int main(void) {
         }
     }
 }
+
+    inFile.close();
+
+    cout << "Letters that contain words: " << endl;
+    BinaryTree<char> lettersTree = wordMap.keySet();
+    lettersTree.printInOrder();
