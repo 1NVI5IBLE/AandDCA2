@@ -18,6 +18,9 @@
     <ClCompile Include="AandDCA2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Stage4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryTree.h">
