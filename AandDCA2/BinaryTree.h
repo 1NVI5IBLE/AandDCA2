@@ -215,7 +215,7 @@ void BinaryTree<T>::printInOrder(BSTNode<T>* node)
 {
 	if (node != nullptr) {
 		printInOrder(node->getLeft());
-		std::cout << node->getItem() << std::endl;
+		cout << node->getItem() << endl;
 		printInOrder(node->getRight());
 	}
 }

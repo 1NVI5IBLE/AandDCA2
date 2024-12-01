@@ -36,6 +36,11 @@ Treemap<K, V>::Treemap(const Treemap<K, V>& other) {
 
 };
 
+template<class K, class V>
+Treemap<K, V>& Treemap<K, V>::operator=(const Treemap<K, V>& other) {
+
+};
+
 
 template <class K, class V>
 void Treemap<K, V>::clear() {
@@ -83,11 +88,12 @@ BinaryTree<K> Treemap<K, V>::keySet() {
 
 template<class K, class V>
 void Treemap<K, V>::put(K key, V value) {
+	Pair<K, V> pairToAdd(key, value);
 	if (containsKey(key)) {
 		get(key) = value;
 	}
 	else {
-		TM.add(Pair<K, V>(key, value));
+		TM.add(pairToAdd);
 	}
 };
 
