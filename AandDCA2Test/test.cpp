@@ -68,6 +68,16 @@ namespace TestTreeMap
 		}
 
 
+		TEST_METHOD(TestOperator)
+		{
+			Treemap<int, std::string> map;
+			map[1] = "One";
+			Assert::AreEqual(std::string("One"), map[1]);
+			Assert::AreEqual(std::string(""), map[2]);
+			map[2] = "Two";
+			Assert::AreEqual(std::string("Two"), map[2]);
+		}
+
 		
 		
 	};
